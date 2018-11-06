@@ -193,6 +193,16 @@
         thick.onclick = function(){
             lineWidth = 10
         }
+        var download=document.getElementById("download")
+        download.onclick = function(){
+            var url = cv.toDataURL("image/png")
+            var a = document.createElement('a')
+            document.body.appendChild(a)
+            a.href = url
+            a.download = '图片'
+            a.target = '_blank'
+            a.click()
+        }
         //工具函数
         function drawCircle(x,y,radius){
             ctx.beginPath()
